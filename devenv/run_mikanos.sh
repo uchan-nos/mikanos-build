@@ -1,0 +1,34 @@
+#!/bin/sh -ex
+
+DEVENV_DIR=$(dirname "$0")
+DISK_IMG=./disk.img
+MOUNT_POINT=./mnt
+
+if [ "$MIKANOS_DIR" = "" ]
+then
+  if [ $# -lt 1 ]
+  then
+      echo "Usage: $0 <day>"
+      exit 1
+  fi
+  MIKANOS_DIR="$HOME/osbook/$1"
+fi
+
+LOADER_EFI="$HOME/edk2/Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi"
+KERNEL_ELF="$MIKANOS_DIR/kernel/kernel.elf"
+
+$DEVENV_DIR/make_image.sh $DISK_IMG $MOUNT_POINT $LOADER_EFI $KERNEL_ELF
+$DEVENV_DIR/mount_image.sh $DISK_IMG $MOUNT_POINT
+
+for APP in $(ls "$MIKANOS_DIR/apps")
+do
+  if [ -f $MIKANOS_DIR/apps/$APP/$APP ]
+  then
+    sudo cp "$MIKANOS_DIR/apps/$APP/$APP" $MOUNT_POINT/
+  fi
+done
+
+sleep 0.5
+sudo umount $MOUNT_POINT
+
+$DEVENV_DIR/run_image.sh $DISK_IMG
