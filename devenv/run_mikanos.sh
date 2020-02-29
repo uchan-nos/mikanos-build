@@ -20,11 +20,16 @@ KERNEL_ELF="$MIKANOS_DIR/kernel/kernel.elf"
 $DEVENV_DIR/make_image.sh $DISK_IMG $MOUNT_POINT $LOADER_EFI $KERNEL_ELF
 $DEVENV_DIR/mount_image.sh $DISK_IMG $MOUNT_POINT
 
+if [ "$APPS_DIR" != "" ]
+then
+  sudo mkdir $MOUNT_POINT/$APPS_DIR
+fi
+
 for APP in $(ls "$MIKANOS_DIR/apps")
 do
   if [ -f $MIKANOS_DIR/apps/$APP/$APP ]
   then
-    sudo cp "$MIKANOS_DIR/apps/$APP/$APP" $MOUNT_POINT/
+    sudo cp "$MIKANOS_DIR/apps/$APP/$APP" $MOUNT_POINT/$APPS_DIR
   fi
 done
 
