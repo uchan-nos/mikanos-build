@@ -73,3 +73,17 @@ cmake -G "Unix Makefiles" \
 
 make -j4
 make install
+
+cd $BASEDIR
+wget https://download.savannah.gnu.org/releases/freetype/freetype-2.10.1.tar.gz
+tar xf freetype-2.10.1.tar.gz
+
+cd $BASEDIR
+mkdir build_freetype
+cd build_freetype
+../freetype-2.10.1/configure \
+  CC=$CC \
+  CFLAGS="-fPIC -I$PREFIX/include $COMMON_CFLAGS" \
+  --host=$TARGET_TRIPLE --prefix=$PREFIX
+make -j 4
+make install
