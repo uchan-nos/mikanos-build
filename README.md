@@ -48,7 +48,7 @@ EDK II に含まれる細かいツールをビルドしておきます。
 ビルド済みの標準ライブラリをダウンロードし展開します。
 
     $ cd $HOME/osbook/devenv
-    $ wget https://github.com/uchan-nos/mikanos-build/releases/download/v1.0/x86_64-elf.tar.gz
+    $ wget https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz
     $ tar xf x86_64-elf.tar.gz
 
 `x86_64-elf.tar.gz` に含まれるファイルは [Newlib](https://sourceware.org/newlib/)，[libc++](https://libcxx.llvm.org/)，[FreeType](https://www.freetype.org/) をビルドしたものです。
