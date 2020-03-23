@@ -51,9 +51,9 @@ EDK II に含まれる細かいツールをビルドしておきます。
     $ wget https://github.com/uchan-nos/mikanos-build/releases/download/v1.0/x86_64-elf.tar.gz
     $ tar xf x86_64-elf.tar.gz
 
-`x86_64-elf.tar.gz` に含まれるファイルは [Newlib](https://sourceware.org/newlib/) と [libc++](https://libcxx.llvm.org/) をビルドしたものです。
-それらのライセンスは Newlib や libc++ のライセンスに従います。
-MikanOS や mikanos-build リポジトリのライセンスとは異なりますので注意してください。
+`x86_64-elf.tar.gz` に含まれるファイルは [Newlib](https://sourceware.org/newlib/)，[libc++](https://libcxx.llvm.org/)，[FreeType](https://www.freetype.org/) をビルドしたものです。
+それらのライセンスはそれぞれのライブラリ固有のライセンスに従います。
+MikanOS や mikanos-build リポジトリ全体のライセンスとは異なりますので注意してください。
 
 次のファイル群は Newlib 由来です。ライセンスは `x86_64-elf/LICENSE.newlib` を参照してください。
 
@@ -71,6 +71,13 @@ MikanOS や mikanos-build リポジトリのライセンスとは異なります
         libc++abi.a
         libc++experimental.a
     x86_64-elf/include/c++/v1/
+        すべて
+
+次のファイル群は FreeType 由来です。ライセンスは `x86_64-elf/LICENSE.freetype` を参照してください。
+
+    x86_64-elf/lib/
+        libfreetype.a
+    x86_64-elf/include/freetype2/
         すべて
 
 ## MikanOS のソースコードの入手

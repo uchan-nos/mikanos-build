@@ -87,3 +87,7 @@ cd build_freetype
   --host=$TARGET_TRIPLE --prefix=$PREFIX
 make -j 4
 make install
+
+rm $PREFIX/lib/libfreetype.la
+rm -rf $PREFIX/lib/pkgconfig
+rm -rf $PREFIX/share
