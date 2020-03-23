@@ -33,6 +33,11 @@ do
   fi
 done
 
+if [ "$RESOURCE_DIR" != "" ]
+then
+  sudo cp $MIKANOS_DIR/$RESOURCE_DIR/* $MOUNT_POINT/
+fi
+
 sleep 0.5
 sudo umount $MOUNT_POINT
 
