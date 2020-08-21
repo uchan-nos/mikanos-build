@@ -20,7 +20,7 @@ MikanOS のビルド手順は大きく次の 4 段階です。
 
     $ sudo apt update
     $ sudo apt install git
-    $ mkdir $HOME
+    $ cd $HOME
     $ git clone https://github.com/uchan-nos/mikanos-build.git osbook
 
 ### 開発ツールの導入
