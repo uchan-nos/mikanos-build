@@ -127,7 +127,7 @@ Loader.efi ファイルが出力されていればビルド成功です。
 
 ビルドします。
 
-    $ cd /path/to/mikanos/kernel
+    $ cd /path/to/mikanos
     $ ./build.sh
 
 QEMU で起動するには `./build.sh` に `run` オプションを指定します。
