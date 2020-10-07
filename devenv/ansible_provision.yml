@@ -12,7 +12,8 @@
         - nasm
         - acpica-tools
         - uuid-dev
-        - qemu
+        - qemu-system-x86
+        - qemu-utils
         - xauth
         - unzip
 
