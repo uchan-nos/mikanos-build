@@ -94,7 +94,7 @@
         repo: "https://github.com/tianocore/edk2.git"
         dest: "{{ ansible_env.HOME }}/edk2"
 
-    - name: build edk2 base tools
+    - name: build EDK II base tools
       make:
         chdir: "{{ ansible_env.HOME }}/edk2/BaseTools/Source/C"
 
