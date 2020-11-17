@@ -5,7 +5,7 @@
       become: yes
       apt:
         name:
-          - make
+          - build-essential
           - llvm-7-dev
           - lld-7
           - clang-7
