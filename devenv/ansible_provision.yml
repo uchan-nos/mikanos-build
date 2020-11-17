@@ -19,6 +19,16 @@
         state: latest
         install_recommends: no
 
+    - name: check whether qemu-system-gui exists
+      command: dpkg-query --show qemu-system-gui
+      ignore_errors: True
+      register: qemu_gui_result
+
+    - name: install qemu gui package if exists
+      become: yes
+      apt: name=qemu-system-gui state=latest install_recommends=no
+      when: qemu_gui_result is succeeded
+
     - name: set llvm 7 as default
       become: yes
       alternatives:
