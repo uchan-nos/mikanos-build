@@ -3,19 +3,21 @@
   tasks:
     - name: ensure development tools are at the latest version
       become: yes
-      apt: name={{ item }} state=latest install_recommends=no
-      with_items:
-        - make
-        - llvm-7-dev
-        - lld-7
-        - clang-7
-        - nasm
-        - acpica-tools
-        - uuid-dev
-        - qemu-system-x86
-        - qemu-utils
-        - xauth
-        - unzip
+      apt:
+        name:
+          - make
+          - llvm-7-dev
+          - lld-7
+          - clang-7
+          - nasm
+          - acpica-tools
+          - uuid-dev
+          - qemu-system-x86
+          - qemu-utils
+          - xauth
+          - unzip
+        state: latest
+        install_recommends: no
 
     - name: set llvm 7 as default
       become: yes
