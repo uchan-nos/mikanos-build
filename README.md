@@ -39,19 +39,11 @@ Ansible を使ってセットアップを行うと楽です。
     $ iasl -v
     $ ls $HOME/edk2
 
-EDK II に含まれる細かいツールをビルドしておきます。
+### 標準ライブラリのライセンスについて
 
-    $ make -C $HOME/edk2/BaseTools/Source/C
+加えて，上記の `ansible-playbook` コマンドはビルド済みの標準ライブラリを `$HOME/osbook/devenv/x86_64-elf` にダウンロードします。
 
-### 標準ライブラリの入手
-
-ビルド済みの標準ライブラリをダウンロードし展開します。
-
-    $ cd $HOME/osbook/devenv
-    $ wget https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz
-    $ tar xf x86_64-elf.tar.gz
-
-`x86_64-elf.tar.gz` に含まれるファイルは [Newlib](https://sourceware.org/newlib/)，[libc++](https://libcxx.llvm.org/)，[FreeType](https://www.freetype.org/) をビルドしたものです。
+このディレクトリに含まれるファイルは [Newlib](https://sourceware.org/newlib/)，[libc++](https://libcxx.llvm.org/)，[FreeType](https://www.freetype.org/) をビルドしたものです。
 それらのライセンスはそれぞれのライブラリ固有のライセンスに従います。
 MikanOS や mikanos-build リポジトリ全体のライセンスとは異なりますので注意してください。
 

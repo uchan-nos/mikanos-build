@@ -93,3 +93,13 @@
       git:
         repo: "https://github.com/tianocore/edk2.git"
         dest: "{{ ansible_env.HOME }}/edk2"
+
+    - name: build edk2 base tools
+      make:
+        chdir: "{{ ansible_env.HOME }}/edk2/BaseTools/Source/C"
+
+    - name: download standard libraries
+      unarchive:
+        src: "https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz"
+        dest: "{{ ansible_env.HOME }}/osbook/devenv"
+        remote_src: yes
