@@ -39,6 +39,11 @@ Ansible を使ってセットアップを行うと楽です。
     $ iasl -v
     $ ls $HOME/edk2
 
+WSL 上の Ubuntu で上記のコマンドを実行すると，`$HOME/.profile` に `DISPLAY` 環境変数の設定が追加されます。
+この設定を有効にするにはターミナルを再起動するか，次のコマンドを実行する必要があります。
+
+    $ source $HOME/.profile
+
 ### 標準ライブラリのライセンスについて
 
 加えて，上記の `ansible-playbook` コマンドはビルド済みの標準ライブラリを `$HOME/osbook/devenv/x86_64-elf` にダウンロードします。
