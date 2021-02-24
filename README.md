@@ -29,6 +29,8 @@ MikanOS のビルド手順は大きく次の 4 段階です。
 `ansible_provision.yml` に必要なツールが記載されています。
 Ansible を使ってセットアップを行うと楽です。
 
+注意）ansible_provision.yml は LLVM7 をデフォルトに設定します。これは Ubuntu の alternatives という仕組みを使い、/usr/bin 以下にリンクを張ることで実現しています。
+
     $ sudo apt install ansible
     $ cd $HOME/osbook/devenv
     $ ansible-playbook -K -i ansible_inventory ansible_provision.yml
