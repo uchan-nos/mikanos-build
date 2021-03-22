@@ -85,6 +85,8 @@ Git で入手できます。
 
     $ git clone https://github.com/uchan-nos/mikanos.git
 
+最後の `git clone` によって、カレントディレクトリに mikanos ディレクトリが生成され、そこに MikanOS のソースコードがダウンロードされます。
+
 ## ブートローダーのビルド
 
 EDK II のディレクトリに MikanOS ブートローダーのディレクトリをリンクします。
@@ -92,6 +94,7 @@ EDK II のディレクトリに MikanOS ブートローダーのディレクト�
     $ cd $HOME/edk2
     $ ln -s /path/to/mikanos/MikanLoaderPkg ./
 
+`/path/to/mikanos` は先ほど `git clone` でダウンロードした mikanos ディレクトリへのパスを指定します。
 ブートローダーのソースコードが正しく見えればリンク成功です。
 
     $ ls MikanLoaderPkg/Main.c
@@ -113,6 +116,8 @@ EDK II のディレクトリに MikanOS ブートローダーのディレクト�
 設定が終わったらブートローダーをビルドします。
 
     $ build
+    
+※もしかしたら「ModuleNotFoundError: No module named 'distutils.util'」というようなエラーが出るかもしれません。その際は `sudo apt install python3-distutils` として、python3-distutils パッケージをインストールしてから、再度 `build` を実行すると上手くいく可能性があります。試してみてください。
 
 Loader.efi ファイルが出力されていればビルド成功です。
 
