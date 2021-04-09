@@ -93,6 +93,7 @@
       git:
         repo: "https://github.com/tianocore/edk2.git"
         dest: "{{ ansible_env.HOME }}/edk2"
+        version: "38c8be123aced4cc8ad5c7e0da9121a181b94251"
 
     - name: build EDK II base tools
       make:
