@@ -16,6 +16,7 @@
           - qemu-utils
           - xauth
           - unzip
+          - python3-distutils
         state: latest
         install_recommends: no
 
