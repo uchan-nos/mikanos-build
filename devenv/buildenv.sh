@@ -5,8 +5,8 @@ EDK2DIR="$HOME/edk2"
 
 if [ ! -d $BASEDIR ]
 then
-    echo "$BASEDIR が存在しません."
-    echo "以下のファイルを手動でダウンロードし，$HOME/osbook/devenv/に展開してください．"
+    echo "$BASEDIR が存在しません。"
+    echo "以下のファイルを手動でダウンロードし、$(dirname $BASEDIR)に展開してください。"
     echo "https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz "
 else
     export CPPFLAGS="\
@@ -16,3 +16,4 @@ else
     -DEFIAPI='__attribute__((ms_abi))'"
     export LDFLAGS="-L$BASEDIR/lib"
 fi
+
