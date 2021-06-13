@@ -3,6 +3,9 @@
 このリポジトリは uchan が開発している教育用 OS [MikanOS](https://github.com/uchan-nos/mikanos) をビルドする手順およびツールを収録しています。
 Ubuntu 18.04 で動作を確認しています。
 
+ここで紹介する手順は Linux のコマンド操作にある程度慣れていることを前提に書かれています。
+Linux のコマンドに不慣れな方は、まず [これだけは知っておきたい Linux コマンド](https://github.com/uchan-nos/os-from-zero/wiki/Basic-Linux-Commands) を読むことをお勧めします。
+
 MikanOS のビルド手順は大きく次の 4 段階です。
 
 1. ビルド環境の構築
