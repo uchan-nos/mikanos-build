@@ -17,6 +17,7 @@
           - xauth
           - unzip
           - python3-distutils
+          - ca-certificates
         state: latest
         install_recommends: no
 
