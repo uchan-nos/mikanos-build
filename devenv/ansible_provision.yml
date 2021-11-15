@@ -112,11 +112,11 @@
         path: "{{ ansible_env.HOME }}/.profile"
         regexp: "^export DISPLAY="
         line: "export DISPLAY=:0"
-      when: "'WSLENV' in ansible_env and 'WSL_INTEROP' not in ansible_env"
+      when: "'DISPLAY' not in ansible_env and 'WSLENV' in ansible_env and 'WSL_INTEROP' not in ansible_env"
 
     - name: configure display variable if WSL2
       lineinfile:
         path: "{{ ansible_env.HOME }}/.profile"
         regexp: "^export DISPLAY="
         line: "export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0"
-      when: "'WSL_INTEROP' in ansible_env"
+      when: "'DISPLAY' not in ansible_env and 'WSL_INTEROP' in ansible_env"
