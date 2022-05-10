@@ -94,6 +94,10 @@ Git で入手できます。
 
 EDK II のディレクトリに MikanOS ブートローダーのディレクトリをリンクします。
 
+| :warning: 以下の `/path/to/mikanos` はご自身の環境に適した文字列に置き換えてください。 |
+|:----|
+| 『ゼロからのOS自作入門』にしたがって実験している場合は `$HOME/workspace/mikanos` となるはずです。 |
+
     $ cd $HOME/edk2
     $ ln -s /path/to/mikanos/MikanLoaderPkg ./
 
