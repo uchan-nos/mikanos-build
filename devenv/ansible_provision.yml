@@ -6,9 +6,9 @@
       apt:
         name:
           - build-essential
-          - llvm-7-dev
-          - lld-7
-          - clang-7
+          - llvm-14-dev
+          - lld-14
+          - clang-14
           - nasm
           - acpica-tools
           - uuid-dev
@@ -32,12 +32,12 @@
       apt: name=qemu-system-gui state=latest install_recommends=no
       when: qemu_gui_result.rc == 0
 
-    - name: set llvm 7 as default
+    - name: set llvm 14 as default
       become: yes
       alternatives:
         name: "{{ item }}"
         link: "/usr/bin/{{ item }}"
-        path: "/usr/bin/{{ item }}-7"
+        path: "/usr/bin/{{ item }}-14"
       with_items:
         - llvm-PerfectShuffle
         - llvm-ar
@@ -96,7 +96,7 @@
       git:
         repo: "https://github.com/tianocore/edk2.git"
         dest: "{{ ansible_env.HOME }}/edk2"
-        version: "38c8be123aced4cc8ad5c7e0da9121a181b94251"
+        version: "edk2-stable202208"
 
     - name: build EDK II base tools
       make:

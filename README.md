@@ -26,6 +26,13 @@ MikanOS のビルド手順は大きく次の 4 段階です。
     $ cd $HOME
     $ git clone https://github.com/uchan-nos/mikanos-build.git osbook
 
+mikanos-build 最新版は Ubuntu 22.04 をサポートしています。
+Ubuntu 18.04 や 20.04 をご使用の場合は llvm-14 パッケージが存在しないため後続の ansible-playbook コマンドが失敗します。
+次のコマンドを実行して古い mikanos-build を利用してください。
+
+    $ cd osbook
+    $ git checkout 8d4882122ec548ef680b6b5a2ae841a0fd4d07a1
+
 ### 開発ツールの導入
 
 次に Clang，Nasm といった開発ツールや，EDK IIのセットアップを行います。
@@ -44,7 +51,7 @@ Ansible を使ってセットアップを行うと楽です。
     $ iasl -v
     $ ls $HOME/edk2
 
-WSL 上の Ubuntu で上記のコマンドを実行すると，`$HOME/.profile` に `DISPLAY` 環境変数の設定が追加されます。
+WSL 上の Ubuntu で上記のコマンドを実行すると，`$HOME/.profile` に `DISPLAY` 環境変数の設定が追加されることがあります。
 この設定を有効にするにはターミナルを再起動するか，次のコマンドを実行する必要があります。
 
     $ source $HOME/.profile
