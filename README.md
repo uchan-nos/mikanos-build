@@ -130,8 +130,9 @@ EDK II のディレクトリに MikanOS ブートローダーのディレクト�
 設定が終わったらブートローダーをビルドします。
 
     $ build
-    
-※もしかしたら「ModuleNotFoundError: No module named 'distutils.util'」というようなエラーが出るかもしれません。その際は `sudo apt install python3-distutils` として、python3-distutils パッケージをインストールしてから、再度 `build` を実行すると上手くいく可能性があります。試してみてください。
+
+- 「ModuleNotFoundError: No module named 'distutils.util'」というエラーが出る場合は、`sudo apt install python3-distutils` を実行してから再度 `build` を実行すると上手くいく可能性があります。試してみてください。
+- 「Instance of library class [RegisterFilterLib] is not found」というエラーが出てビルドが失敗する場合は [RegisterFilterLib 関係のエラーで MikanLoaderPkg がビルドできません](https://github.com/uchan-nos/os-from-zero/blob/main/faq.md#registerfilterlib-%E9%96%A2%E4%BF%82%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%A7-mikanloaderpkg-%E3%81%8C%E3%83%93%E3%83%AB%E3%83%89%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93) を参照してください。
 
 Loader.efi ファイルが出力されていればビルド成功です。
 
